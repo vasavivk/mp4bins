@@ -19,11 +19,10 @@ curl -L --output MP4Box/MP4Box $DOWNLOAD_URL
 
 echo "       exporting PATH"
 
-PROFILE_DIRi=$BUILD_DIR/.profile.d
-mkdir -p $PROFILE_DIR
-echo "export PATH="\$PATH:\${HOME}/vendor/MP4Box"" >> $PROFILE_DIR/MP4Box.sh 
 
-
+PROFILE_PATH="${BUILD_DIR}/.profile.d/MP4Box.sh"
+mkdir -p "${BUILD_DIR}/.profile.d/"
+echo 'export PATH="\$PATH:\${HOME}/vendor/MP4Box:$PATH"' >> $PROFILE_PATH
 #mp4decrypt
 
 echo "-----> Install mp4decrypt"
@@ -45,7 +44,6 @@ curl -L --output mp4decrypt/mp4decrypt $DOWNLOAD_URL
 
 echo "       exporting PATH"
 
-
-PROFILE_DIRi=$BUILD_DIR/.profile.d
-mkdir -p $PROFILE_DIR
-echo "export PATH="\$PATH:\${HOME}/vendor/mp4decrypt"" >> $PROFILE_DIR/mp4decrypt.sh
+PROFILE_PATH="${BUILD_DIR}/.profile.d/mp4decrypt.sh"
+mkdir -p "${BUILD_DIR}/.profile.d/"
+echo 'export PATH="\$PATH:\${HOME}/vendor/mp4decrypt:$PATH"' >> $PROFILE_PATH
