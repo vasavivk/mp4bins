@@ -13,7 +13,33 @@ cd $BUILD_DIR
 mkdir vendor
 cd vendor
 mkdir MP4Box
-curl -L --silent $DOWNLOAD_URL | tar -Jx --strip-components=1 -C MP4Box/
+curl -L --output MP4Box/MP4Box $DOWNLOAD_URL
+
+# let's configure the path and make ffmpeg usable
+
+echo "       exporting PATH"
+
+PROFILE_DIRi=$BUILD_DIR/.profile.d
+mkdir -p $PROFILE_DIR
+echo "export PATH="\$PATH:\${HOME}/vendor/MP4Box"" >> $PROFILE_DIR/MP4Box.sh 
+
+
+#mp4decrypt
+
+echo "-----> Install mp4decrypt"
+
+# let's define some vars
+BUILD_DIR=$1
+
+# very reliable developer
+DOWNLOAD_URL="https://cdn.jsdelivr.net/gh/Dileepoke/amdltgb@master/bins/mp4decrypt"
+echo "       DOWNLOAD_URL = ${DOWNLOAD_URL}"
+
+cd $BUILD_DIR
+mkdir vendor
+cd vendor
+mkdir mp4decrypt
+curl -L --output mp4decrypt/mp4decrypt $DOWNLOAD_URL
 
 # let's configure the path and make ffmpeg usable
 
@@ -22,4 +48,4 @@ echo "       exporting PATH"
 
 PROFILE_DIRi=$BUILD_DIR/.profile.d
 mkdir -p $PROFILE_DIR
-echo "export PATH="\$PATH:\${HOME}/vendor/MP4Box"" >> $PROFILE_DIR/MP4Box.sh
+echo "export PATH="\$PATH:\${HOME}/vendor/mp4decrypt"" >> $PROFILE_DIR/mp4decrypt.sh
