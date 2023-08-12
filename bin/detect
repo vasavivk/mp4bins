@@ -1,6 +1,5 @@
 #!/bin/sh
 
 echo "MP4Box"
-echo "mp4decrypt"
 
 exit 0
