@@ -7,7 +7,7 @@ indent() {
 echo "-----> Install MP4Box (from static binary)"
 BUILD_DIR=$1
 VENDOR_DIR="vendor/mp4box"
-DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/master/mp4box-2.2.1-dev.tar.gz"
+DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/main/mp4box-2.2.1-dev.tar.gz"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
