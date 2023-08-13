@@ -4,7 +4,7 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Install MP4Box (from static binary)"
+echo "-----> Installing MP4Box/gpac (from TheKVT static binary)"
 BUILD_DIR=$1
 VENDOR_DIR="vendor/mp4box"
 DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/main/mp4box-2.2.1-dev.tar.gz"
@@ -21,3 +21,77 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/mp4box.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:vendor/mp4box/bin"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/mp4box/lib"' >> $PROFILE_PATH
+
+
+echo "-----> Install bento4 (from TheKVT static binary)"
+BUILD_DIR=$1
+VENDOR_DIR="vendor/bento4"
+DOWNLOAD_URL="http://zebulon.bok.net/Bento4/binaries/$FILE.zip"
+
+echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
+
+cd $BUILD_DIR
+mkdir -p $VENDOR_DIR
+cd $VENDOR_DIR
+wget -q $DOWNLOAD_URL
+unzip -qq $FILE.zip
+mv $FILE/bin .
+
+echo "exporting PATH" | indent
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4info.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4dump.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4edit.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4extract.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4encrypt.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4decrypt.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4dcfpackager.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4compact.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4fragment.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4split.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4tag.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4mux.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp42aac.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp42avc.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp42hls.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp42ts.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4dash.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4dashclone.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+PROFILE_PATH="$BUILD_DIR/.profile.d/mp4hls.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
