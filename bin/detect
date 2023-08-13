@@ -1,5 +1,5 @@
 #!/bin/sh
 
 echo "MP4Box"
-
+echo "mp4info"
 exit 0
