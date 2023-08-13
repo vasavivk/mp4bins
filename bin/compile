@@ -6,6 +6,7 @@ indent() {
 
 #MP4Box
 echo "-----> Installing MP4Box/gpac (from TheKVT static binary)"
+
 BUILD_DIR=$1
 VENDOR_DIR="vendor/mp4box"
 DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/main/mp4box-2.2.1-dev.tar.gz"
@@ -15,20 +16,21 @@ echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl -L --silent $DOWNLOAD_URL | tar xz
 
+curl -L --silent $DOWNLOAD_URL | tar xz
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/mp4box.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:vendor/mp4box/bin"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/mp4box/lib"' >> $PROFILE_PATH
 
-
+echo "-----> Installed MP4Box (from TheKVT static binary) Sucessfully ;)"
 
 
 
 #Bento4 SDK
 echo "-----> Install Bento4 (from TheKVT static binary)"
+
 BUILD_DIR=$1
 VENDOR_DIR="vendor/bento4"
 DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/main/Bento4-SDK-1-6-0-640-dev.zip"
@@ -100,3 +102,5 @@ echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
 PROFILE_PATH="$BUILD_DIR/.profile.d/mp4hls.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/bento4/bin"' >> $PROFILE_PATH
+
+echo "-----> Installed Bento SDK Tools (from TheKVT static binary) Sucessfully ;)"
