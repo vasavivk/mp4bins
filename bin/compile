@@ -26,7 +26,7 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/mp4box/lib"' >> $PROFILE_P
 echo "-----> Install bento4 (from TheKVT static binary)"
 BUILD_DIR=$1
 VENDOR_DIR="vendor/bento4"
-DOWNLOAD_URL="http://zebulon.bok.net/Bento4/binaries/$FILE.zip"
+DOWNLOAD_URL="https://github.com/Dileepoke/mp4bins/raw/main/Bento4-SDK-1-6-0-640-dev.zip"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
